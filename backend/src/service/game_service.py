@@ -1,8 +1,11 @@
+
+from dao.game_dao import GameDao
 from fastapi import HTTPException
 
 from business_object.game_mode.game_mode_factory import GameModeFactory
 from business_object.scoring_strategy import ScoringStrategy
 from dao.player_dao import PlayerDao
+from dao.game_dao import GameDao
 from utils.log_utils import log
 
 
@@ -39,5 +42,7 @@ class GameService:
 
         PlayerDao().update(p1)
         PlayerDao().update(p2)
+
+        GameDao().create(game)
 
         return game
