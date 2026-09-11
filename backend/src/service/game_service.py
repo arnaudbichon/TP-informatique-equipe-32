@@ -46,3 +46,18 @@ class GameService:
         GameDao().create(game)
 
         return game
+    
+    @log
+    def find_by_id(self, id_game: int):
+        """Find a game by its ID."""
+        return GameDao().find_by_id(id_game)
+    
+    @log
+    def find_all_by_player(self, id_player: int, game_mode: str = None):
+        """Find all games of a player, optionally filtered by game mode."""
+        games = GameDao().find_all_by_player(id_player)
+
+        if game_mode is None:
+            return games
+
+        return [game for game in games if game.game_mode == game_mode]
