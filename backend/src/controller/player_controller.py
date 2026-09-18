@@ -1,16 +1,19 @@
 # controller/player_controller.py
 
-
 from fastapi import APIRouter, Depends, HTTPException
 
+from service.game_service import GameService
 from schema.player_model import PlayerModel, PlayerReadModel
 from service.player_service import PlayerService
 from utils.log_utils import get_logger
+from dao.player_dao import PlayerDao
 
 router = APIRouter()
 
 logger = get_logger(__name__)
 
+def get_game_service():
+    return GameService()
 
 def get_player_service():
     """Dependency Injection provider for PlayerService."""
@@ -118,3 +121,17 @@ async def delete_player(id_player: int, player_service=Depends(get_player_servic
 
     player_service.delete(player)
     return f"Player {player.username} deleted"
+
+
+@router.get("/{id_player}/games", tags=["Games"])
+async def get_games(
+    id_player: int,
+    game_mode: str = None,
+    service=Depends(get_game_service)
+):
+    player = PlayerDao().find_by_id(id_player)
+
+    if not player:
+        raise HTTPException(status_code=404, detail="Player not found")
+
+    return service.find_all_by_player(id_player, game_mode)

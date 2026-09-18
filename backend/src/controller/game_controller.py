@@ -41,3 +41,10 @@ def play_game(
         new_elo1=game.player1.elo,
         new_elo2=game.player2.elo,
     )
+
+@router.get("/", tags=["Games"])
+async def get_mock_games(id_player: int = None):
+    return [
+        {"id_game": 1, "mode": "coinflip", "winner": "Miguel", "id_player": id_player},
+        {"id_game": 2, "mode": "dice", "winner": "Batricia", "id_player": id_player}
+    ]
