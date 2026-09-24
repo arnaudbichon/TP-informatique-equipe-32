@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>readme</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="README_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="README_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap-3eab1d601e622de40cca32ca757bd946.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="ensai-2a-projet-info-template" class="level1">
+<h1>ENSAI-2A-projet-info-template</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://github.com/ludo2ne/ENSAI-2A-projet-info-template/actions/workflows/ci.yml/badge.svg" class="img-fluid figure-img"></p>
+<figcaption>CI</figcaption>
+</figure>
+</div>
+<p>Template for the ENSAI 2nd year IT project.</p>
+<p>This very simple application includes a few elements that may help with the info 2A project:</p>
+<ul>
+<li>Creating a webservice with FastAPI</li>
+<li>Layer programming (DAO, service, view, business_object)</li>
+<li>Connection to a database</li>
+<li>Calling a Webservice</li>
+<li>Interface with Streamlit</li>
+</ul>
+<section id="arrow_forward-quick-launch-with-ssp-cloud" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-quick-launch-with-ssp-cloud">:arrow_forward: Quick launch with SSP Cloud</h2>
+<p>Needed: <a href="https://datalab.sspcloud.fr/">SSP Cloud</a> account.</p>
+<section id="start-a-service-and-import-the-project" class="level3">
+<h3 class="anchored" data-anchor-id="start-a-service-and-import-the-project">Start a service and import the project</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Launch a <strong>VSCode-python</strong> service (including Visual Studio Code, Python 3.13, Git)</label>
+<ul>
+<li>Open ports 5000 and 8000 (Otherwise, you won’t be able to access your application from the web)</li>
+</ul></li>
+<li><label><input type="checkbox">Open a terminal</label></li>
+<li><label><input type="checkbox">Clone the repository</label>
+<ul>
+<li><code>git clone https://github.com/ludo2ne/ENSAI-2A-projet-info-template.git</code></li>
+</ul></li>
+<li><label><input type="checkbox">Open Folder of the repository</label>
+<ul>
+<li><code>code-server ENSAI-2A-projet-info-template</code> or File &gt; Open Folder</li>
+<li><em>ENSAI-2A-projet-info-template</em> should be the root directory of your Explorer</li>
+<li>:warning: if not the application will not launch. Retry open folder</li>
+</ul></li>
+</ul>
+</section>
+<section id="install-required-packages" class="level3">
+<h3 class="anchored" data-anchor-id="install-required-packages">Install required packages</h3>
+<p>Install and manage all dependencies with <a href="https://docs.astral.sh/uv/">uv</a>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># curl -LsSf https://astral.sh/uv/install.sh | sh</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync <span class="at">--project</span> backend</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> sync <span class="at">--project</span> frontend</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="environment-variables" class="level3">
+<h3 class="anchored" data-anchor-id="environment-variables">Environment variables</h3>
+<p>Define environment variables to declare the database and webservice to which you are going to connect your python application.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Launch a <a href="https://www.postgresql.org/">PostreSQL</a> database</label></li>
+<li><label><input type="checkbox">Create a file called <code>.env</code> in the project’s root directory</label></li>
+<li><label><input type="checkbox">Paste in and complete the elements below</label></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>POSTGRES_HOST=postgresql-cnpg-&lt;suffixe&gt;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>POSTGRES_PORT=5432</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>POSTGRES_DATABASE=defaultdb</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>POSTGRES_USER=user-&lt;username&gt;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>POSTGRES_PASSWORD=&lt;password&gt;</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>POSTGRES_SCHEMA=project</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>UVICORN_HOST=0.0.0.0</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>UVICORN_PORT=5000</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>BACKEND_URL=http://localhost:5000</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>BACKEND_TIMEOUT=5</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ELO_K_FACTOR=32</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="launch-applications" class="level3">
+<h3 class="anchored" data-anchor-id="launch-applications">Launch applications</h3>
+<p>Open two terminals:</p>
+<ul>
+<li>Backend FastApi: <code>uv run --project backend python backend/src/main.py</code></li>
+<li>Frontend Streamlit: <code>cd frontend</code> and <code>uv run --project . streamlit run src/app.py</code></li>
+</ul>
+<p>:bulb: First Launch: Click on <strong>Reset Database</strong> to initialize it.</p>
+<p>:warning: <strong>After launching, do not click on the link in the pop-up!</strong></p>
+</section>
+<section id="accessing-the-application-from-the-web" class="level3">
+<h3 class="anchored" data-anchor-id="accessing-the-application-from-the-web">Accessing the application from the web</h3>
+<p>Since the application runs inside a cloud container, the services are not directly accessible via <em>localhost</em> from your local browser. You must use the public URLs provided by Onyxia.</p>
+<p>To get the public URL for your services (Frontend or Backend):</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Go to your <a href="https://datalab.sspcloud.fr/my-services">Onyxia services</a></label></li>
+<li><label><input type="checkbox">Click on the <strong>“Open”</strong> button, you will see links to access the api and/or the gui</label></li>
+</ul>
+</section>
+<section id="endpoints" class="level3">
+<h3 class="anchored" data-anchor-id="endpoints">Endpoints</h3>
+<p>Documentation : <code>/docs</code> or <code>/redoc</code></p>
+<p>Examples of endpoints, assuming that the environment variable <code>$API_URL</code> (e.g.&nbsp;<code>export API_URL=http://localhost:5000</code>) contains the URL of the web service:</p>
+<ul>
+<li><code>curl -L -X GET $API_URL/player | jq .</code></li>
+<li><code>curl -L -X GET $API_URL/player/3 | jq .</code></li>
+<li><pre><code>curl -L -X POST "$API_URL/player" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "patapouf",
+    "password": "123456789abcdefghijklmnopqrstuvwxyz",
+    "elo": 1500,
+    "email": "patapouf@mail.fr",
+    "pokemon_fan": true
+  }' | jq .</code></pre></li>
+<li><pre><code>curl -L -X PUT "$API_URL/player/3" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "maurice_new",
+    "password": "123456789abcdefghijklmnopqrstuvwxyz",
+    "elo": 1400,
+    "email": "maurice@ensai.fr",
+    "pokemon_fan": true
+  }' | jq .</code></pre></li>
+<li><code>curl -L -X DELETE "$API_URL/player/5" | jq .</code></li>
+</ul>
+</section>
+</section>
+<section id="arrow_forward-project-structure" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-project-structure">:arrow_forward: Project structure</h2>
+<section id="folders" class="level3">
+<h3 class="anchored" data-anchor-id="folders">Folders</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 73%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>data</code></td>
+<td>SQL script to create the tables and insert some data</td>
+</tr>
+<tr class="even">
+<td><code>doc</code></td>
+<td>Report, tracking, UML diagrams, etc.</td>
+</tr>
+<tr class="odd">
+<td><code>backend</code></td>
+<td>API code organized using a layered architecture</td>
+</tr>
+<tr class="even">
+<td><code>frontend</code></td>
+<td>GUI code (graphical user interface)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="files" class="level3">
+<h3 class="anchored" data-anchor-id="files">Files</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 76%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>README.md</code></td>
+<td>Provides useful information to present, install, and use the application</td>
+</tr>
+<tr class="even">
+<td><code>LICENSE</code></td>
+<td>Specifies the usage rights and licensing terms for the repository</td>
+</tr>
+<tr class="odd">
+<td><code>.github/workflows/ci.yml</code></td>
+<td>Automated workflow that runs predefined tasks (like testing, linting, or deploying)</td>
+</tr>
+<tr class="even">
+<td><code>.vscode/settings.json</code></td>
+<td>VSCode settings specific to this project</td>
+</tr>
+<tr class="odd">
+<td><code>.gitignore</code></td>
+<td>Lists files and folders that should not be tracked by Git</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="arrow_forward-continuous-integration-ci" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-continuous-integration-ci">:arrow_forward: Continuous integration (CI)</h2>
+<p>The repository contains a <code>.github/workflow/main.yml</code> file.</p>
+<p>When you <em>push</em> on GitHub, it triggers a pipeline that will perform the following steps:</p>
+<ul>
+<li>Creating a container from an Ubuntu (Linux) image
+<ul>
+<li>In other words, it creates a virtual machine with just a Linux kernel.</li>
+</ul></li>
+<li>Install Python</li>
+<li>Install the required packages</li>
+<li>Run the unit tests (only the service tests, as it’s more complicated to run the dao tests)</li>
+<li>Analyse the code with <em>pylint</em>
+<ul>
+<li>If the score is less than 7.5, the step will fail</li>
+</ul></li>
+</ul>
+<p>You can check how this pipeline is progressing on your repository’s GitHub page, <em>Actions</em> tab.</p>
+</section>
+<section id="arrow_forward-quick-launch-with-docker" class="level2">
+<h2 class="anchored" data-anchor-id="arrow_forward-quick-launch-with-docker">:arrow_forward: Quick launch with Docker</h2>
+<p>Prerequisites: <a href="https://docs.docker.com/desktop/">Docker Desktop</a>.</p>
+<p><strong>Dockerfile</strong>: A text document containing all the commands a user could call to assemble a specific image (the blueprint of your application and its environment).</p>
+<p><strong>Docker Compose</strong>: A tool for defining and running multi-container applications, using a YAML file to configure how different services (like your backend, frontend, and database) interact and start together.</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Build containers: <code>docker compose up --build -d</code></label></li>
+<li><label><input type="checkbox">See running processes: <code>docker compose ps</code></label></li>
+</ul>
+<p>To see logs:</p>
+<ul>
+<li><code>docker compose logs -f</code> for all containers</li>
+<li><code>docker compose logs -f backend</code> only for backend</li>
+</ul>
+<p><strong>Backend API:</strong> http://localhost:5000 <strong>Frontend UI:</strong> http://localhost:8000</p>
+<ul class="task-list">
+<li><label><input type="checkbox"><code>docker compose down</code> to remove conainers</label>
+<ul>
+<li><code>docker compose stop</code> to simply stop</li>
+</ul></li>
+</ul>
+<p><a href="https://github.com/olevitt/kubernetes">How it works</a></p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
