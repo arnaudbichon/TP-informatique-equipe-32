@@ -1,7 +1,9 @@
+from client.game_client import GameClient
 from service.game_service import GameService
 from utils.env_variables import display_values, load_environment_variables
 from utils.log_utils import initialize_logs
 
+"""
 # Initialization
 initialize_logs("Webservice")
 
@@ -20,3 +22,9 @@ print(g2)
 
 print(f"{g2.player1.username} : new elo -> {g2.player1.elo}")
 print(f"{g2.player2.username} : new elo -> {g2.player2.elo}")
+"""
+client = GameClient()
+games = client.get_games()
+print(f"{len(games)} games loaded:")
+for g in games:
+    print(f"- {g}")
