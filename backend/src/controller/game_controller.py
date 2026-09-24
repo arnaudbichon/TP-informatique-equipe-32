@@ -14,6 +14,9 @@ def get_game_service():
     """Dependency provider for GameService."""
     return GameService()
 
+@router.get("/", tags=["Games"])
+async def get_games(id_player: int, game_mode: str = None):
+    return get_game_service().find_all_by_player(id_player, game_mode=game_mode)
 
 @router.post("/", response_model=GameResponse, tags=["Games"])
 def play_game(
