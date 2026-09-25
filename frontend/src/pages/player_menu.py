@@ -26,6 +26,8 @@ if st.button(label="Play Coin Flip"):
     st.switch_page("pages/play_coinflip.py")
 if st.button(label="Play dice"):
     st.switch_page("pages/play_dice.py")
+if st.button(label="Player Stats"):
+    st.switch_page("pages/player_stats.py", query_params={"id_player": str(player['id_player'])})
 if st.button(label="Log out", type="primary"):
     logger.info("Log out")
     del st.session_state["player"]
