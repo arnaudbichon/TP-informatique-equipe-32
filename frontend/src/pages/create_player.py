@@ -9,10 +9,13 @@ Endpoint used:
 
 import os
 
+import dotenv
 import streamlit as st
 
 from utils.api_client import api_client
 from utils.log_init import get_page_logger
+
+dotenv.load_dotenv()    
 
 st.title("Create a player account")
 logger = get_page_logger("create_player")
